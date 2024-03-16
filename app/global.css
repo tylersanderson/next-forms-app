@@ -75,3 +75,15 @@ li {
   white-space: nowrap;
   border-width: 0;
 }
+
+.list {
+  margin-top: 24px;
+}
+
+.likeButton {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}

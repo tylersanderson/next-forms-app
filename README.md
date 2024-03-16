@@ -23,3 +23,9 @@ pnpm create next-app --example next-forms next-forms-app
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+## Docker setup
+
+```
+docker run --name next-forms-postgres -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
+```
