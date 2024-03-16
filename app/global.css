@@ -81,9 +81,30 @@ li {
 }
 
 .likeButton {
-  margin-top: 24px;
   display: flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
+}
+
+.likeButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.optimistic {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.arrow {
+  font-size: 24px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }

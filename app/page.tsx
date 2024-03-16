@@ -3,6 +3,8 @@ import postgres from "postgres";
 import { AddForm } from "@/app/add-form";
 import { DeleteForm } from "@/app/delete-form";
 import LikeButton from "@/app/like-button";
+import LikeButtonOptimistic from "@/app/like-button-optimistic";
+import { FaLongArrowAltLeft } from "react-icons/fa";
 
 let sql = postgres(process.env.DATABASE_URL || process.env.POSTGRES_URL!, {
   ssl: "prefer",
@@ -43,7 +45,14 @@ export default async function Home() {
           </li>
         ))}
       </ul>
-      <LikeButton likes={likes[0]?.count} />
+      <div className="likeButtons">
+        <LikeButton likes={likes[0]?.count} />
+        <div className="optimistic">
+          <LikeButtonOptimistic likes={likes[0]?.count} />
+          <FaLongArrowAltLeft className="arrow" />
+          {` Optimistic`}
+        </div>
+      </div>
     </main>
   );
 }
