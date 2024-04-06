@@ -3,18 +3,19 @@ import { useOptimistic, useTransition } from "react";
 import { incrementLike } from "@/app/actions";
 import { FaRegThumbsUp } from "react-icons/fa";
 
-export default function LikeButtonOptimistic({
-  likes,
-}: {
+type LikeButtonOptimisticProps = {
   likes: number | null;
-}) {
-  let [isPending, startTransition] = useTransition();
+};
+
+export default function LikeButtonOptimistic(
+  props: Readonly<LikeButtonOptimisticProps>
+) {
+  const { likes } = props;
+  let [_isPending, startTransition] = useTransition();
   const [optimisticLikes, addOptimisticLikes] = useOptimistic(
-    likes || 0, // Default to 0 likes if null
+    likes ?? 0, // Default to 0 likes if null
     (state, l) => state + 1
   );
-
-  console.log({ likes, optimisticLikes });
 
   return (
     <div className="likeButton">

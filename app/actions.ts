@@ -82,12 +82,12 @@ export async function incrementLike(likes: number) {
 `;
 
   // If the row doesn't exist, insert it
-  if (!result.length) {
-    await sql`
-    INSERT INTO likes (id, count)
-    VALUES (1, 0)
-  `;
-  }
+  // if (!result.length) {
+  //   await sql`
+  //   INSERT INTO likes (id, count)
+  //   VALUES (1, 0)
+  // `;
+  // }
 
   // Increment the count value
   await sql`

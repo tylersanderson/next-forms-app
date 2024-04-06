@@ -11,19 +11,19 @@ let sql = postgres(process.env.DATABASE_URL || process.env.POSTGRES_URL!, {
 });
 
 export default async function Home() {
-  await sql`
-    CREATE TABLE IF NOT EXISTS todos (
-      id SERIAL PRIMARY KEY,
-      text TEXT NOT NULL
-    )
-  `;
+  //   await sql`
+  //     CREATE TABLE IF NOT EXISTS todos (
+  //       id SERIAL PRIMARY KEY,
+  //       text TEXT NOT NULL
+  //     )
+  //   `;
 
-  await sql`
-  CREATE TABLE IF NOT EXISTS likes (
-    id SERIAL PRIMARY KEY,
-    count INTEGER NOT NULL DEFAULT 0
-  )
-`;
+  //   await sql`
+  //   CREATE TABLE IF NOT EXISTS likes (
+  //     id SERIAL PRIMARY KEY,
+  //     count INTEGER NOT NULL DEFAULT 0
+  //   )
+  // `;
 
   let todos = await sql`SELECT * FROM todos`;
 

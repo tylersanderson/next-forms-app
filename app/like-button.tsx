@@ -3,7 +3,12 @@ import { useTransition } from "react";
 import { incrementLike } from "@/app/actions";
 import { FaRegThumbsUp } from "react-icons/fa";
 
-export default function LikeButton({ likes }: { likes: number | null }) {
+type LikeButtonProps = {
+  likes: number | null;
+};
+
+export default function LikeButton(props: Readonly<LikeButtonProps>) {
+  const { likes } = props;
   let [isPending, startTransition] = useTransition();
 
   return (
