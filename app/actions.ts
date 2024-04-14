@@ -8,11 +8,6 @@ let sql = postgres(process.env.DATABASE_URL || process.env.POSTGRES_URL!, {
   ssl: "prefer",
 });
 
-// CREATE TABLE todos (
-//   id SERIAL PRIMARY KEY,
-//   text TEXT NOT NULL
-// );
-
 export async function createTodo(
   prevState: {
     message: string;
@@ -74,21 +69,6 @@ export async function deleteTodo(
 }
 
 export async function incrementLike(likes: number) {
-  // Check if a row with id = 1 exists
-  let result = await sql`
-  SELECT count 
-  FROM likes 
-  WHERE id = 1
-`;
-
-  // If the row doesn't exist, insert it
-  // if (!result.length) {
-  //   await sql`
-  //   INSERT INTO likes (id, count)
-  //   VALUES (1, 0)
-  // `;
-  // }
-
   // Increment the count value
   await sql`
   UPDATE likes
