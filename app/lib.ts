@@ -29,3 +29,18 @@
 // `;
 //   revalidatePath("/");
 // }
+
+// Needed in page.tsx if db does not exist
+//   await sql`
+//     CREATE TABLE IF NOT EXISTS todos (
+//       id SERIAL PRIMARY KEY,
+//       text TEXT NOT NULL
+//     )
+//   `;
+
+//   await sql`
+//   CREATE TABLE IF NOT EXISTS likes (
+//     id SERIAL PRIMARY KEY,
+//     count INTEGER NOT NULL DEFAULT 0
+//   )
+// `;
