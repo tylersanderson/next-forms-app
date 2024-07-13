@@ -68,12 +68,19 @@ export async function deleteTodo(
   }
 }
 
-export async function incrementLike(likes: number) {
-  // Increment the count value
-  await sql`
-  UPDATE likes
-  SET count = count + 1
-  WHERE id = 1
-`;
-  revalidatePath("/");
+export async function incrementLike() {
+  try {
+    // throw new Error("Simulated error for testing");
+
+    // Increment the count value
+    await sql`
+    UPDATE likes
+    SET count = count + 1
+    WHERE id = 1
+    `;
+    revalidatePath("/");
+  } catch (e) {
+    console.error(e.message);
+    return { message: "Failed to increment like" };
+  }
 }

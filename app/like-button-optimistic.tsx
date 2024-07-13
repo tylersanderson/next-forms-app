@@ -23,7 +23,7 @@ export default function LikeButtonOptimistic(
         onClick={() =>
           startTransition(async () => {
             addOptimisticLikes(1); // Optimistically increment the like count
-            await incrementLike(optimisticLikes); // Call the server action
+            await incrementLike(); // Call the server action
           })
         }
       />
