@@ -16,7 +16,7 @@ export default function LikeButton(props: Readonly<LikeButtonProps>) {
       <FaRegThumbsUp
         onClick={() =>
           startTransition(async () => {
-            await incrementLike((likes || 0) + 1); // Call the server action
+            await incrementLike(); // Call the server action
           })
         }
       />
